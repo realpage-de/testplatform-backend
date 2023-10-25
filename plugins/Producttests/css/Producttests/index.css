@@ -1,0 +1,30 @@
+.table-producttests .col-date-start,
+.table-producttests .col-date-end {
+	width: 70px;
+}
+
+.table-producttests .table-producttests-image {
+    width: 235px;
+}
+
+.table-producttests .table-producttests-image-object {
+    position: relative;
+}
+
+.table-producttests .table-producttests-image-object-image {
+    -webkit-filter: drop-shadow(0 0 3px #000);
+    filter: drop-shadow(0 0 3px #000);}
+
+.table-producttests .table-producttests-image-object-seal-image {
+    position: absolute;
+    right: .5rem;
+    bottom: .5rem;
+    width: 40%;
+    -webkit-filter: drop-shadow(0 0 3px #000);
+    filter: drop-shadow(0 0 3px #000);
+}
+
+.nav-tabs-producttest {
+	padding: .25rem .25rem 0 .25rem;
+	background-color: #f8f8f8;
+}

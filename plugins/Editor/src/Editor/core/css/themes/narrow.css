@@ -1,0 +1,14 @@
+.narrow > rp-editor-wrapper > rp-editor-blocks {
+	padding: 4px 0;
+}
+
+.narrow > rp-editor-wrapper rp-editor-blocks rp-editor-block {
+	margin-left: 7px;
+	margin-right: 4px;
+	padding: 5px;
+}
+
+.narrow > rp-editor-wrapper rp-editor-blocks rp-editor-block.is-focused {
+	padding-top: 4px;
+	padding-bottom: 4px;
+}

@@ -1,0 +1,69 @@
+.full-width {
+	width: 100%;
+	max-width: 100%;
+}
+
+.max-full-width {
+	max-width: 100%;
+}
+
+/* datepicker */
+.input-group.date .form-control[readonly] {
+	background: #fff;
+	cursor: text;
+}
+
+/* rp-switch */
+rp-switch.form-control {
+	display: block;
+	width: 60px;
+}
+  
+rp-switch .slider:before {
+	border-radius: 5px;
+}
+
+rp-switch .slider {
+	background-color: #dc3545;
+}
+
+rp-switch[checked] .slider {
+    background-color: #2e7555;
+}
+
+/* global table */
+table thead tr th[data-status] {
+	width: 30px;
+}
+
+table thead tr th[data-actions] {
+	width: 30px;
+}
+
+/* form checkbox */
+.form-checkbox .checkbox label:not(.form-check-label) {
+	font-weight: 400;
+}
+
+.form-checkbox .checkbox label input {
+	margin-right: 5px;
+}
+
+.form-checkbox-inline .checkbox {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+/* form radio */
+.form-radio label:not(.form-check-label) {
+	font-weight: 400;
+}
+
+.form-radio label input {
+	margin-right: 5px;
+}
+
+.form-radio-inline label {
+	display: inline-block;
+	margin-right: 30px;
+}

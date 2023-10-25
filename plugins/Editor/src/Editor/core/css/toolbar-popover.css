@@ -1,0 +1,72 @@
+rp-editor-wrapper .toolbar-popover-wrapper {
+	position: absolute;
+	transform: translateX(-50%);
+	z-index: 7;
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner {
+	margin-top: 6px;
+	background-color: #fff;
+	border: 1px solid #d2d4d8;
+	box-shadow: 0 3px 30px rgba(25, 30, 35, .1);
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner:before {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: rotate(45deg);
+	margin-left: -7px;
+	width: 14px;
+	height: 14px;
+	border-color: #e2e4e7;
+	border-width: 1px;
+	border-style: solid none none solid;
+	box-shadow: -3px -3px 3px rgba(25, 30, 35, .065);
+	background-color: #fff;
+	z-index: -1;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .toolbar-popover-row {
+	padding: 10px;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .toolbar-popover-row.no-padding {
+	padding: 0 !important;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .toolbar-popover-row + .toolbar-popover-row {
+	border-top: 1px solid #c8cbcf;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .input {
+	border: 1px solid #c8cbcf;
+	color: #32373c;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .input.no-border {
+	border: 0 !important;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .input.input-text {
+	padding: 10px;
+	width: 100%;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner .input.input-select {
+	padding: 5px;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner label {
+	display: block;
+}
+
+rp-editor-wrapper .toolbar-popover-wrapper .toolbar-popover-wrapper-inner label + .input {
+	margin-top: 5px;
+}

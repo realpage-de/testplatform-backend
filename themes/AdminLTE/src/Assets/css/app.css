@@ -1,0 +1,22 @@
+/* plugins */
+	/* DataTables */
+	//=require plugins/datatables-bs4/dataTables.bootstrap4.min.css
+	//=require plugins/datatables-responsive/responsive.bootstrap4.min.css
+
+	/* air-datepicker */
+	//=require plugins/air-datepicker/datepicker.min.css
+
+	/* rp-switch */
+	//=require plugins/rp-switch/rp-switch.css
+
+	/* AdminLTE */
+	//=require plugins/adminlte/adminlte.min.css
+
+/* app */
+	/* AdminLTE */
+	//=require adminlte.css
+
+	//=require global.css
+
+	/* Modal */
+	//=require modal.css

@@ -1,0 +1,5 @@
+rp-editor-wrapper .selection {
+	background: rgba(46, 115, 252, .1);
+	border-radius: .1em;
+	border: 2px solid rgba(98, 155, 255, .8);
+}

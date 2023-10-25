@@ -1,0 +1,284 @@
+/* editor */
+rp-editor-wrapper {
+	display: block;
+	position: relative;
+	width: 100%;
+	border: 1px #d3d3d3 solid;
+	background-color: #fff;
+	box-shadow: 0 0 5px rgba(0, 0, 0, .05);
+	font-size: 15px;
+	line-height: 1.4;
+	color: #616971;
+	box-sizing: border-box;
+	outline: none;
+}
+
+@media only screen and (max-width: 768px) {
+	rp-editor-wrapper {
+		margin: 5px;
+		width: calc(100% - 10px);
+	}
+}
+
+rp-editor-wrapper.is-focused,
+rp-editor-wrapper:hover {
+	opacity: 1;
+}
+
+rp-editor-wrapper * {
+	box-sizing: inherit;
+	outline: inherit;
+}
+
+rp-editor-wrapper.is-disabled .is-disabled-hidden {
+	display: none !important;
+}
+
+rp-editor-wrapper rp-editor-blocks {
+	display: block;
+	position: relative;
+}
+
+rp-editor-wrapper > rp-editor-blocks {
+	min-height: 50px;
+	padding: 30px 0;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block {
+	display: block;
+	position: relative;
+	margin: 1px 28px;
+	padding: 10px;
+	border-right: 1px solid transparent;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-selected:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	width: 100%;
+	height: 100%;
+	background: rgba(117, 195, 255, .3);
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-selected rp-editor-toolbar,
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-selected:before {
+	display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+	rp-editor-wrapper rp-editor-blocks rp-editor-block {
+		margin: 1px 5px;
+	}
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-hovered {
+	box-shadow: -3px 0 0 0 #e3e5e8;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-focused {
+	padding-top: 9px;
+	padding-bottom: 9px;
+	border: 1px solid rgba(66, 88, 99, .4);
+	border-left: 0;
+	background-color: #fff;
+	box-shadow: -3px 0 0 0 #555d66,
+				0 1px 1px rgba(25, 30, 35, .2);
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-hovered:before,
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-focused:before {
+	content: attr(name);
+	position: absolute;
+	top: -11px;
+	padding: 4px 5px;
+	font-size: 80%;
+	color: #555d66;
+	line-height: 1;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-hovered:before {
+	left: -3px;
+	background-color: #e3e5e8;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block.is-focused:before {
+	left: auto;
+	top: -22px;
+	right: -1px;
+	padding: 6px 7px 4px 7px;
+	background-color: #fff;
+	box-shadow: inset -1px 0 0 rgba(66, 88, 99, .4),
+				inset 1px 0 0 rgba(66, 88, 99, .4),
+				inset 0 1px 0 rgba(66, 88, 99, .4);
+	line-height: 1;
+}
+
+@media only screen and (max-width: 768px) {
+	rp-editor-wrapper rp-editor-blocks rp-editor-block.is-focused:before {
+		top: -25px;
+		padding: 6px 9px 2px 9px;
+		font-size: 90%;
+	}
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper {
+	position: relative;
+	display: block;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-field {
+	position: relative;
+	display: inline-block;
+	margin: 5px;
+	width: 100%;
+	font-weight: normal;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper [placeholder]:empty:before {
+	content: attr(placeholder);
+	display: block;
+	/*position: absolute;*/
+	/*top: 50%;*/
+	/*left: 10px;*/
+	/*transform: translateY(-50%);*/
+	max-width: calc(100% - 20px);
+	max-height: 100%;
+	opacity: .3;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'],
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'],
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='field'] {
+	position: relative;
+	display: flex;
+	background-color: #fff;
+	z-index: 999;
+	-webkit-user-select: none; /* Safari 3.1+ */
+	-moz-user-select: none; /* Firefox 2+ */
+	-ms-user-select: none; /* IE 10+ */
+	user-select: none;
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] {
+	margin-bottom: -6px;
+	border-bottom: 1px #d3d3d3 solid;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] {
+	position: absolute;
+	top: 5px;
+	left: 0;
+	transform: translateY(-100%);
+	box-shadow: -3px 0 0 0 #555d66,
+				0 1px 1px rgba(25, 30, 35, .2);
+	border-color: rgba(66, 88, 99, .4);
+	border-style: solid;
+	border-width: 1px 1px 1px 0;
+}
+
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] {
+	position: fixed;
+	bottom: 0;
+}
+
+@media only screen and (min-width: 769px) {
+	rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] {
+		left: 50%;
+		transform: translate(-50%, -5px);
+		box-shadow: 0 1px 1px rgba(25, 30, 35, .2);
+		border: 1px solid rgba(66, 88, 99, .4);
+	}
+}
+
+@media only screen and (max-width: 768px) {
+	rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] {
+		left: 0;
+		width: 100%;
+		box-shadow: 0 -1px 0 rgba(25, 30, 35, .2),
+					0 -2px 0 rgba(25, 30, 35, .2);
+	}
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section {
+	display: flex;
+	padding: 3px;
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section:not(:last-child),
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section:not(:last-child),
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section:not(:last-child) {
+	box-shadow: 1px 0 0 rgba(66, 88, 99, .3);
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section rp-editor-toolbar-button,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section rp-editor-toolbar-button,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section rp-editor-toolbar-button {
+	width: 30px;
+	height: 30px;
+	border-radius: 3px;
+	padding: 4px;
+	font-size: 120%;
+	text-align: center;
+	color: #555d66;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+	rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section rp-editor-toolbar-button,
+	rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section rp-editor-toolbar-button,
+	rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section rp-editor-toolbar-button {
+		width: 40px;
+		height: 40px;
+		font-size: 160%;
+		padding: 5px;
+	}
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section rp-editor-toolbar-button.is-active,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section rp-editor-toolbar-button.is-active {
+	background-color: #f3f4f5;
+	box-shadow: inset 0 0 0 1px #c2c9cf,
+				inset 0 0 0 2px #fff;
+	color: #222;
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section rp-editor-toolbar-button.is-hovered,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section rp-editor-toolbar-button.is-hovered,
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section rp-editor-toolbar-button.is-hovered {
+	color: #222;
+}
+
+rp-editor-wrapper rp-editor-toolbar[type='editor'] rp-editor-toolbar-section rp-editor-toolbar-button:not(:last-child),
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-toolbar[type='block'] rp-editor-toolbar-section rp-editor-toolbar-button:not(:last-child),
+rp-editor-wrapper rp-editor-blocks rp-editor-block rp-editor-field-wrapper rp-editor-toolbar[type='field'] rp-editor-toolbar-section rp-editor-toolbar-button:not(:last-child) {
+	margin-right: 3px;
+}
+
+/* opening effect */
+@keyframes showing {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* closing effect */
+@keyframes closing {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}

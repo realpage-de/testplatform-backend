@@ -1,0 +1,7 @@
+[data-widget-user-children] {
+	display: none;
+}
+
+[data-widget-user-children].opened {
+	display: block;
+}
